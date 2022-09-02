@@ -116,7 +116,7 @@ To integrate ODL with our standalone app you must enable these features:
 
 Start Mininet on VM with
 
-`sudo mn --topo tree--controller 'remote,ip=127.0.0.1,port=6653' --switch ovsk,protocols=OpenFlow13`
+`sudo mn --topo tree --controller 'remote,ip=127.0.0.1,port=6653' --switch ovsk,protocols=OpenFlow13`
 
 For adding host nodes (simulated end-user devices connected to the switches) into topology, in the mininet console run command `pingall`. Host nodes appear in the network-topology data.
 
@@ -148,3 +148,4 @@ You can use this simple Gruntfile.js
   };
 ```
 After running grunt you can access OFM standalone app via web browser typing URL http://localhost:9000.
+If you want to run this in remote with different ip instead of localhost you need to add ' hostname: "<remote machine or vm ip>" ' in above "Gruntfile.js" file inside "options: {}". So, you will get url like http://{VM-IP}:9000
